@@ -12,8 +12,10 @@ async function asyncfetchWeatherData() {
   let resp = await fetch(`${url}${city}`); // fetch is an asynchronous method
   let data = await resp.json();
 
-  if (data.success === true) {
-    list.innerHTML = ""; // clear any previous results
+  list.innerHTML = ""; // clear any previous results
+  err.textContent = "";  // clear any previous error message
+
+  if (data.success === true) {    
 
     for (let i = 0; i < data.result.length; i++) {
       let {
@@ -53,8 +55,12 @@ function fetchWeatherData() {
     .then((resp) => resp.json())
     .then((data) => {
       //console.log(data);
+     
+      list.innerHTML = ""; // clear any previous results
+      err.textContent = "";  // clear any previous error message
+
       if (data.success === true) {
-        list.innerHTML = ""; // clear any previous results
+  
 
         for (let i = 0; i < data.result.length; i++) {
           let {
