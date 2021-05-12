@@ -1,0 +1,10 @@
+#errormsg {
+    color: red;
+}
+li {
+    list-style: none;
+}
+
+li img {
+    width: 50px;
+}
